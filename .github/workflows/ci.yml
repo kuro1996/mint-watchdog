@@ -1,0 +1,56 @@
+# CI gate for the future public repo (Kiroween submission).
+# The .kiro pre-commit hook only runs inside Kiro, so GitHub needs
+# its own gate: nothing merges without tests + build + secret scan.
+# Report-only repo: no deploy, no wallet, no signing happens here.
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: No Vercel metadata tracked
+        # app/.vercel/anonymous.json holds a LIVE deployment token.
+        # It must never reach the public repo (see Risk #1, audit 2026-11-14).
+        run: |
+          if git ls-files | grep -i vercel; then
+            echo "ERROR: Vercel metadata is tracked. Remove it before pushing."
+            exit 1
+          fi
+
+      - name: Secret scan (tracked files)
+        run: |
+          if grep -rInE --exclude-dir=node_modules --exclude-dir=.next \
+              --exclude=package-lock.json \
+              -e 'sk-[A-Za-z0-9]{20}' -e 'ghp_[A-Za-z0-9]{20,}' \
+              -e 'AKIA[0-9A-Z]{16}' -e 'BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY' \
+              -e 'xox[baprs]-[A-Za-z0-9-]{10,}' \
+              . ; then
+            echo "ERROR: possible secret in tracked files (see matches above)."
+            exit 1
+          fi
+          echo "secret scan clean"
+
+      - name: Python tests
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          python3 -m pip install pycryptodome
+          python3 -m unittest discover -v
+
+      - name: Dashboard build
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - run: |
+          cd app
+          npm ci
+          npm run build
