@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scene 1 — The problem</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px; height: 1080px;
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+  }
+  .wrap { padding: 64px 80px; height: 100%; display: flex; flex-direction: column; }
+  h1 { font-size: 64px; line-height: 1.1; font-weight: 800; }
+  h1 .red { color: #f87171; }
+  .sub { margin-top: 16px; font-size: 28px; color: #94a3b8; }
+  .panels { margin-top: 48px; display: flex; gap: 40px; flex: 1; }
+  .panel {
+    flex: 1; background: #1e293b; border: 1px solid #334155;
+    border-radius: 24px; padding: 36px 40px; position: relative;
+  }
+  .panel .tag {
+    display: inline-block; font-size: 20px; font-weight: 700;
+    padding: 8px 16px; border-radius: 999px; margin-bottom: 24px;
+  }
+  .x .tag { background: #0f1419; border: 1px solid #536471; color: #e7e9ea; }
+  .tg .tag { background: #0e1621; border: 1px solid #2aabee; color: #2aabee; }
+  .handle { font-size: 26px; font-weight: 700; }
+  .time { font-size: 20px; color: #64748b; margin-left: 12px; }
+  .post { margin-top: 20px; font-size: 30px; line-height: 1.45; }
+  .post .mono { font-family: ui-monospace, monospace; font-size: 24px; color: #7dd3fc; }
+  .clock {
+    margin-top: 28px; display: flex; align-items: center; gap: 20px;
+  }
+  .clock .face {
+    width: 120px; height: 120px; border-radius: 50%;
+    border: 8px solid #f87171; border-top-color: #334155;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px; font-weight: 800; color: #fca5a5;
+  }
+  .clock .label { font-size: 26px; color: #fca5a5; font-weight: 600; line-height: 1.3; }
+  .missed {
+    margin-top: 28px; font-size: 28px; font-weight: 700; color: #f87171;
+  }
+  .foot {
+    margin-top: 40px; font-size: 22px; color: #64748b;
+    border-top: 1px solid #1e293b; padding-top: 24px;
+  }
+  .foot b { color: #94a3b8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The problem: <span class="red">15 minutes</span> is all you get.</h1>
+  <p class="sub">A free-mint window opens in a public post — and closes before most hunters even see it.</p>
+  <div class="panels">
+    <div class="panel x">
+      <span class="tag">𝕏 &nbsp;X — public post</span>
+      <div><span class="handle">@nhutqui2309</span><span class="time">· lead source</span></div>
+      <p class="post">“Free mint open — Agent ID holders only.<br>
+      <span class="mono">0x4158…18c1C4</span> · 1,000 free · window 15 min”</p>
+      <div class="clock">
+        <div class="face">15:00</div>
+        <div class="label">Window closes in<br>15 minutes</div>
+      </div>
+    </div>
+    <div class="panel tg">
+      <span class="tag">✈ &nbsp;Telegram — public channel</span>
+      <div><span class="handle">agentidcall</span><span class="time">· lead channel</span></div>
+      <p class="post">“New free mint — verified contract,<br>
+      first mint free, gas only.<br>
+      <span class="mono">0x4789…7312</span> · FCFS, fills fast”</p>
+      <div class="missed">⏰ Seen 14 minutes late → window gone.</div>
+    </div>
+  </div>
+  <p class="foot"><b>Illustrative mock of the two public lead sources</b> — no login, no session, no wallet connected. And an unverified mint can still burn your gas — or worse.</p>
+</div>
+</body>
+</html>

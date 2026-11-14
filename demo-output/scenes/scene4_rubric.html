@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scene 4 — The rubric runs as code</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px; height: 1080px; background: #0f172a; color: #e2e8f0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+  }
+  .wrap { padding: 48px 80px; height: 100%; display: flex; flex-direction: column; }
+  h1 { font-size: 56px; font-weight: 800; }
+  h1 .green { color: #34d399; }
+  .sub { margin-top: 10px; font-size: 26px; color: #94a3b8; }
+  .shot {
+    margin-top: 32px; height: 600px; overflow: hidden;
+    border: 1px solid #334155; border-radius: 20px;
+  }
+  .shot img { width: 1760px; margin-top: -110px; display: block; }
+  .caption {
+    margin-top: 28px; background: #7f1d1d; border: 1px solid #b91c1c;
+    border-radius: 16px; padding: 24px 32px; font-size: 30px; line-height: 1.4;
+    font-weight: 600;
+  }
+  .caption .rule { color: #fca5a5; }
+  .foot { margin-top: 20px; font-size: 22px; color: #64748b; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The rubric runs <span class="green">as code</span> — 100 points, no guessing.</h1>
+  <p class="sub">Rubric panel on the candidate page. Unknowns earn 0 and become NEEDS HUMAN — never a guessed number.</p>
+  <div class="shot"><img src="../frames/rubric.png" alt="Rubric panel: Lumen Case 6, 48/100, PASS"></div>
+  <div class="caption"><span class="rule">Hard Cap 40:</span> drainable escrow alone &rarr; AVOID — do not mint or buy, even if free.</div>
+  <p class="foot">Panel shown: Lumen Findings, Case 6 — 48/100, PASS. A real past mint (2026-11-13/14), shown as a demo example.</p>
+</div>
+</body>
+</html>
