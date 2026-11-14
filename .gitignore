@@ -1,0 +1,32 @@
+# Mint Watchdog .gitignore
+# .kiro is deliberately NOT ignored (Kiroween requires it at the repo root).
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Runtime data (never committed): the SQLite database and any local run logs.
+server/store/mintwatch.db
+server/store/*.db
+*.log
+
+# Local environment / editor noise.
+.env
+.DS_Store
+.vscode/
+.idea/
+
+# Vercel deploy metadata (belt-and-braces duplicate of app/.gitignore):
+# app/.vercel/anonymous.json holds a LIVE deployment token. It must
+# never be committed, zipped, or uploaded to GitHub. The anonymous
+# deploy from 2026-11-14 expired ~03:25 WIB; its token file was deleted.
+.vercel/
+
+# Demo video build outputs (large / regenerable — never committed).
+# Only the text artifacts in demo-output/ (scenes.json, build.sh,
+# narration/*.txt, scenes/*.html, *.py) are committed.
+demo-output/output.mp4
+demo-output/frames/
+demo-output/audio/
