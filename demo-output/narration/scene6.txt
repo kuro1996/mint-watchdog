@@ -1,0 +1,1 @@
+Report-only, free to run, useful after the hackathon too. Live at mint-watchdog dot vercel dot app.

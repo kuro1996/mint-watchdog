@@ -1,0 +1,1 @@
+A win counts only on receipt 0x1 plus the token proven in the wallet — never the preview's guess. Lumen number 1500 and Zeroday number 169 are real past mints, shown as demo examples.

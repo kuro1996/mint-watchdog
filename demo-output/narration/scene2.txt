@@ -1,0 +1,1 @@
+Mint Watchdog reads public X and Telegram pages — no login, no session. The examples on screen are real past mints, shown as demo examples — not live leads.
