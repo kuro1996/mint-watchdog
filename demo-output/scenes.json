@@ -1,0 +1,70 @@
+{
+ "footage": "Real dashboard footage: local Next.js dashboard (localhost:3000) + read-only API (localhost:8000). Scene 1 is a labelled HTML mock of the two public lead sources (no X/Telegram login). Scenes 4-5 are HTML composites around real dashboard screenshots. All fixtures shown (Lumen #1500, Zeroday #169, TEGONG) are real past mints from 2026-11-13/14, labelled DEMO EXAMPLE on screen and in narration \u2014 never presented as live leads.",
+ "hard_cap_seconds": 180,
+ "resolution": "1920x1080",
+ "scenes": [
+  {
+   "audio": "audio/scene1.mp3",
+   "frame": "frames/scene1.png",
+   "id": "scene1",
+   "min_duration": 10,
+   "narration": "Free-mint hunters miss 15-minute windows and burn gas on unverified mints.",
+   "source": "HTML scene (scenes/scene1_problem.html) \u2014 illustrative mock, labelled on screen",
+   "time": "0:00-0:10",
+   "title": "The problem"
+  },
+  {
+   "audio": "audio/scene2.mp3",
+   "frame": "frames/feed.png",
+   "id": "scene2",
+   "min_duration": 16,
+   "narration": "Mint Watchdog reads public X and Telegram pages \u2014 no login, no session. The examples on screen are real past mints, shown as demo examples \u2014 not live leads.",
+   "source": "Live screenshot: dashboard / (localhost:3000)",
+   "time": "0:10-0:26",
+   "title": "Ingest"
+  },
+  {
+   "audio": "audio/scene3.mp3",
+   "frame": "frames/candidate.png",
+   "id": "scene3",
+   "min_duration": 14,
+   "narration": "Every lead is verified on-chain before anyone looks at it. Shown here: Lumen Findings, Case 6 \u2014 a real past mint, now a demo example.",
+   "source": "Live screenshot: /candidate/0x4158B701EaA30E8FaDBaA526F70780A38318c1C4 (verification section)",
+   "time": "0:26-0:40",
+   "title": "Verify"
+  },
+  {
+   "audio": "audio/scene4.mp3",
+   "frame": "frames/scene4.png",
+   "id": "scene4",
+   "min_duration": 12,
+   "narration": "The 100-point rubric runs as code \u2014 drainable escrow alone is capped at 40, AVOID, even if free.",
+   "source": "HTML composite (scenes/scene4_rubric.html) around live rubric screenshot; Hard Cap 40 rule shown as caption (drainable-escrow-alone hardened 2026-11-14, commit 302fa72)",
+   "time": "0:40-0:52",
+   "title": "Score"
+  },
+  {
+   "audio": "audio/scene5.mp3",
+   "frame": "frames/scene5.png",
+   "id": "scene5",
+   "min_duration": 19,
+   "narration": "A win counts only on receipt 0x1 plus the token proven in the wallet \u2014 never the preview's guess. Lumen number 1500 and Zeroday number 169 are real past mints, shown as demo examples.",
+   "source": "HTML composite (scenes/scene5_receipt.html) around live preview screenshots (Lumen #1500, Zeroday #169)",
+   "time": "0:52-1:11",
+   "title": "The receipt lesson"
+  },
+  {
+   "audio": "audio/scene6.mp3",
+   "frame": "frames/holdings.png",
+   "id": "scene6",
+   "min_duration": 11,
+   "narration": "Report-only, free to run, useful after the hackathon too. Live at mint-watchdog dot vercel dot app.",
+   "source": "Live screenshot: /holdings (localhost:3000)",
+   "time": "1:11-1:22",
+   "title": "Holdings + gas"
+  }
+ ],
+ "target_seconds": 150,
+ "title": "Mint Watchdog \u2014 Kiroween 2026 demo (Frankenstein)",
+ "voice": "edge-tts en-US-ChristopherNeural (fallback: Google Translate TTS, see tts_google.py)"
+}
