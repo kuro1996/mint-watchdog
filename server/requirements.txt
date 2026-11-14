@@ -1,0 +1,8 @@
+# Server dependencies — Week 1 (stdlib-first)
+
+# Everything except Keccak-256 is Python 3.12 stdlib (urllib, sqlite3,
+# http.server, unittest). No FastAPI in Week 1: it is not installed on the
+# build VM, and the Week 1 deliverable is the ingest → verify → score →
+# store pipeline plus a stdlib read-only API. If FastAPI is wanted later,
+# server/api.py is the single file to swap.
+pycryptodome>=3.20  # Keccak-256 only (stdlib hashlib has SHA3-256, which is NOT Keccak)
